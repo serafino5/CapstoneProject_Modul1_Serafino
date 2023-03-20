@@ -71,7 +71,7 @@ def menampilkanData():                                                          
             print('{:<27}'.format(hasil),end ='')
         print()
 
-def mencariData(j):                                                                    # Mencari Data
+def mencariData():                                                                    # Mencari Data
     pencarianData = input('Masukkan ID Buku: ')
     if pencarianData in id_Buku:
         indexPencarian = id_Buku.index(pencarianData)
@@ -267,7 +267,7 @@ while True:
                 else:
                     menampilkanData()
             elif Data == '2':
-                mencariData(Data)
+                mencariData()
             elif Data == '3':
                 break
             else:
