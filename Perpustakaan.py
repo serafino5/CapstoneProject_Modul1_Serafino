@@ -1,4 +1,4 @@
-# ============================================= DATA =============================================
+# ================================================ DATA ==================================================
 id_Buku       = ['101', '102', '103']
 nama_Buku     = ['Bahasa Indonesia', 'Kewarganegaraan', 'Ilmu Pengetahuan Alam']
 jenis_Buku    = ['Pendidikan', 'Pendidikan', 'Pendidikan']
@@ -130,7 +130,7 @@ def editData():                                                                 
             hasil = list(dataPerpustakaan.values())[j][indexEdit]
             print('{:<27}'.format(hasil), end ='')
         print()
-        print() 
+        print()
         notifEdit = input('Apakah Yakin Untuk Edit Data?(y/n): ')
         if notifEdit == 'y':
             edit_Nama = input('Masukkan Nama Baru: ')
@@ -158,6 +158,7 @@ def editData():                                                                 
             print('Batal Edit Data')  
         else:
             print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')
+
     else:
         print('Data Tidak Ditemukan')
 
