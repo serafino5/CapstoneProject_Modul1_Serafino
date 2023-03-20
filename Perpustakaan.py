@@ -69,7 +69,7 @@ def menampilkanData():                                                          
         for j in range(len(list(dataPerpustakaan.keys()))):
             hasil = list(dataPerpustakaan.values())[j][i]
             print('{:<27}'.format(hasil),end ='')
-        print() 
+        print()
 
 def mencariData(j):                                                                    # Mencari Data
     pencarianData = input('Masukkan ID Buku: ')
@@ -132,65 +132,72 @@ def editData():                                                                 
         print()
         print()
         notifEdit = input('Apakah Yakin Untuk Edit Data?(y/n): ')
-        if notifEdit == 'y':
-            print('''PILIH BAGIAN YANG INGIN DI EDIT
-            1. Edit Nama Buku
-            2. Edit Jenis Buku
-            3. Edit Jumlah Buku Perpustakaan
-            4. Edit Semua Data''')
+        while True:
+            if notifEdit == 'y':
+                print('''PILIH BAGIAN YANG INGIN DI EDIT
+                1. Edit Nama Buku
+                2. Edit Jenis Buku
+                3. Edit Jumlah Buku Perpustakaan
+                4. Edit Semua Data
+                5. Kembali Ke Menu Edit''')
 
-            pilihEdit = input('Masukkan Menu Yang Ingin Di Edit[1-4]: ')
-            if pilihEdit == '1':
-                while True:
+                pilihEdit = input('Masukkan Menu Yang Ingin Di Edit[1-4]: ')
+                if pilihEdit == '1':
                     edit_Nama = input('Masukkan Nama Baru: ')
-                    endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
-                    if endEdit == 'y':
-                        nama_Buku[indexEdit] = edit_Nama
-                        print('Data Baru Berhasil Disimpan')
-                        menampilkanData()
-                    elif endEdit == 'n':
-                        print('Data Baru Batal Disimpan')
-                    else:
-                        print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')
-     
-            elif pilihEdit == '2':
-                while True:
+                    while True:
+                        endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
+                        if endEdit == 'y':
+                            nama_Buku[indexEdit] = edit_Nama
+                            print('Data Baru Berhasil Disimpan')
+                            menampilkanData()
+                            break
+                        elif endEdit == 'n':
+                            print('Data Baru Batal Disimpan')
+                            break
+                        else:
+                            print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')
+        
+                elif pilihEdit == '2':
                     edit_Jenis = input('Masukkan Jenis Buku: ')
-                    endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
-                    if endEdit == 'y':
-                        jenis_Buku[indexEdit] = edit_Jenis
-                        print('Data Baru Berhasil Disimpan')
-                        menampilkanData()
-                    elif endEdit == 'n':
-                        print('Data Baru Batal Disimpan')
-                    else:
-                        print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')                
+                    while True:
+                        endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
+                        if endEdit == 'y':
+                            jenis_Buku[indexEdit] = edit_Jenis
+                            print('Data Baru Berhasil Disimpan')
+                            menampilkanData()
+                            break
+                        elif endEdit == 'n':
+                            print('Data Baru Batal Disimpan')
+                            break
+                        else:
+                            print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')               
 
-            elif pilihEdit == '3':
-                while True:
+                elif pilihEdit == '3': 
                     edit_Total = input('Masukkan Jumlah Buku Keseluruhan: ')
                     edit_Pinjam = input('Masukkan Jumlah Buku Yang Terpinjam: ')
                     if edit_Total.isnumeric() and edit_Pinjam.isnumeric():
                         edit_Total = int(edit_Total)
                         edit_Pinjam = int(edit_Pinjam)
                         if edit_Total > edit_Pinjam:
-                            endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
-                            if endEdit == 'y':
-                                jumlah_Total[indexEdit] = edit_Total
-                                jumlah_Pinjam[indexEdit] = edit_Pinjam
-                                print('Data Baru Berhasil Disimpan')
-                                menampilkanData()
-                            elif endEdit == 'n':
-                                print('Data Baru Batal Disimpan')
-                            else:
-                                print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')  
+                            while True:
+                                endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
+                                if endEdit == 'y':
+                                    jumlah_Total[indexEdit] = edit_Total
+                                    jumlah_Pinjam[indexEdit] = edit_Pinjam
+                                    print('Data Baru Berhasil Disimpan')
+                                    menampilkanData()
+                                    break
+                                elif endEdit == 'n':
+                                    print('Data Baru Batal Disimpan')
+                                    break
+                                else:
+                                    print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')  
                         else:
                             print('Jumlah Keseluruhan Harus Lebih Banyak Dari Buku Yang Terpinjam !!!')      
                     else:
                         print('Jumlah Harus Berupa Angka')
-                
-            elif pilihEdit == '4':
-                while True:
+                    
+                elif pilihEdit == '4':
                     edit_Nama = input('Masukkan Nama Baru: ')
                     edit_Jenis = input('Masukkan Jenis Buku: ')
                     edit_Total = input('Masukkan Jumlah Buku Keseluruhan: ')
@@ -198,25 +205,28 @@ def editData():                                                                 
                     if edit_Total.isnumeric() and edit_Pinjam.isnumeric():
                         edit_Total = int(edit_Total)
                         edit_Pinjam = int(edit_Pinjam)
-                        endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
-                        if endEdit == 'y':
-                            nama_Buku[indexEdit] = edit_Nama
-                            jenis_Buku[indexEdit] = edit_Jenis
-                            jumlah_Total[indexEdit] = edit_Total
-                            jumlah_Pinjam[indexEdit] = edit_Pinjam
-                            menampilkanData()
-                        elif endEdit == 'n':
-                            print('Data Batal Di Simpan')
-                        else:
-                            print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')
+                        while True:
+                            endEdit = input('Apakah Yakin Utuk Menyimpan Data Baru?(y/n): ')
+                            if endEdit == 'y':
+                                nama_Buku[indexEdit] = edit_Nama
+                                jenis_Buku[indexEdit] = edit_Jenis
+                                jumlah_Total[indexEdit] = edit_Total
+                                jumlah_Pinjam[indexEdit] = edit_Pinjam
+                                menampilkanData()
+                            elif endEdit == 'n':
+                                print('Data Batal Di Simpan')
+                            else:
+                                print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')
                     else:
                         print('Jumlah Buku Harus Berupa Angka')
+                elif pilihEdit == '5':
+                    break
+                else:
+                    print('Pilihan Salah. Harap Masukkan Angka Sesuai Menu[1-5]: ')
+            elif notifEdit == 'n':
+                print('Batal Untuk Edit Data')
             else:
-                print('Pilihan Salah. Harap Masukkan Angka Sesuai Menu[1-4]: ')
-        elif notifEdit == 'n':
-            print('Batal Untuk Edit Data')
-        else:
-            print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')
+                print('Pilihan Salah. Harap Masukkan y/n Sebagai Yes/No')
     else:
         print('Data Buku Tidak Ditemukan')
 
