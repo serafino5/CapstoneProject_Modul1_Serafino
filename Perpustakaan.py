@@ -213,6 +213,7 @@ def editData():                                                                 
                                 jumlah_Total[indexEdit] = edit_Total
                                 jumlah_Pinjam[indexEdit] = edit_Pinjam
                                 menampilkanData()
+                                break
                             elif endEdit == 'n':
                                 print('Data Batal Di Simpan')
                             else:
